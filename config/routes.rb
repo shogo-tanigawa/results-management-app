@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   devise_for :users, controllers: {
-    omniauth_callbacks: "omniauth_callbacks"
+    registrations: 'users/registrations',
+    sessions     : 'users/sessions',
+    omniauth_callbacks: 'omniauth_callbacks'
   }
 end
