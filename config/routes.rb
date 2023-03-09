@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks'
   }
+  resources :users, :only => [:index, :show]
 
   devise_scope :users do
     get '/users', to: redirect("/users/sign_up")
