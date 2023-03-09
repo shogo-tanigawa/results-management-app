@@ -1,14 +1,18 @@
 <% provide(:title, 'All Users') %>
+<h1>ユーザー一覧</h1>
 
-<div class="main users-index">
-  <div class="container">
-    <h1 class="users-heading">ユーザー一覧</h1>
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-condensed table-hover" id="table-users">
+    <thead>
+      <tr>
+        <th><%= User.human_attribute_name :name %></th>
+      </tr>
+    </thead>
+
     <% @users.each do |user| %>
-      <div class="users-index-item">
-        <div class="user-right">
-          <%= user.name %>
-        </div>
-      </div>
+      <tr>
+        <td><%= user.name %></td>
+      </tr>
     <% end %>
-  </div>
+  </table>
 </div>

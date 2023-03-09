@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.7.6'
 
 gem 'rails', '~> 6.0.6', '>= 6.0.6.1'
+gem 'faker'
 gem 'bootstrap-sass'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
