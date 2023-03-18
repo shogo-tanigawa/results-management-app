@@ -3,7 +3,7 @@
 User.create!(name: "管理者",
              email: "admin@email.com",
              password: "password",
-             encrypted_password: "password",
+             password_confirmation: "password",
              admin: true)
 
 20.times do |n|
@@ -13,5 +13,5 @@ User.create!(name: "管理者",
   User.create!(name: name,
                email: email,
                password: password,
-               encrypted_password: password)
+               password_confirmation: password)
 end
