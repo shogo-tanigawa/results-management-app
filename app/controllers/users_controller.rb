@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :authenticate_user!
-  
+
   def index
     @users = User.all
   end
@@ -8,4 +9,5 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+  
 end
