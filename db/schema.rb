@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2023_03_20_130846) do
 
   create_table "games", force: :cascade do |t|
     t.date "game_day"
-    t.string "stagium"
+    t.string "stadium"
     t.string "tournament"
     t.string "opponent"
     t.datetime "started_at"

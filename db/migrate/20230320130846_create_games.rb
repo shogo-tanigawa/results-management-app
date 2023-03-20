@@ -2,7 +2,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
   def change
     create_table :games do |t|
       t.date :game_day
-      t.string :stagium
+      t.string :stadium
       t.string :tournament
       t.string :opponent
       t.datetime :started_at
