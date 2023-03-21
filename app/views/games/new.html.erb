@@ -27,10 +27,10 @@
     <%= f.select :batting_fielding, {'先攻': '先攻', '後攻': '後攻'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
 
     <%= f.label :my_score, class: "label-game--new" %>
-    <%= f.text_field :my_score, class: "form-control" %>
+    <%= f.number_field :my_score, class: "form-control" %>
 
     <%= f.label :opponent_score, class: "label-game--new" %>
-    <%= f.text_field :opponent_score, class: "form-control" %>
+    <%= f.number_field :opponent_score, class: "form-control" %>
 
     <%= f.label :result, class: "label-game--new" %>
     <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
