@@ -27,9 +27,19 @@ class GamesController < ApplicationController
   end
 
   def update
+    if @game.update_attributes(game_params)
+      flash[:success] = "試合結果を更新しました。"
+      redirect_to @game
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    flash[:success] = "#{@game.game_day}の#{@game.opponent}戦のデータを削除しました。"
+    redirect_to games_url
   end
 
   private
