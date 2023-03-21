@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   
   def index
-    @game = Game.all
+    @games = Game.all
+    game = Game.find_by(id: params[:id])
   end
 
   def new
@@ -30,6 +31,6 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      params.require(:game).permit(:game_day, :stadium, :tournament, :opponent, :started_at, :finished_at, :batting_fielding, :result, :score)
+      params.require(:game).permit(:game_day, :stadium, :tournament, :opponent, :started_at, :finished_at, :batting_fielding, :result, :my_score, :opponent_score)
     end
 end
