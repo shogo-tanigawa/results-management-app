@@ -30,7 +30,13 @@
       </tr>
       <tr>
         <th>点数</th>
-        <td><%= @game.my_score %> - <%= @game.opponent_score %></td>
+        <td>
+          <% if @game.batting_fielding == "先攻" %>
+            <%= @game.my_score %> - <%= @game.opponent_score %>
+          <% else %>
+            <%= @game.opponent_score %> - <%= @game.my_score %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th>結果</th>
