@@ -19,7 +19,7 @@
         <td><%= game.tournament %></td>
         <td><%= game.opponent %></td>
         <td><%= game.result %></td>
-        <td></td>
+        <td><%= link_to "詳細", game_path(game.id), class: "btn btn-info" %></td>
       </tr>
     <% end %>
   </table>
