@@ -5,6 +5,10 @@ class GamesController < ApplicationController
     game = Game.find_by(id: params[:id])
   end
 
+  def show
+    @game = Game.find(params[:id])
+  end
+
   def new
     @game = Game.new
   end
@@ -32,5 +36,9 @@ class GamesController < ApplicationController
 
     def game_params
       params.require(:game).permit(:game_day, :stadium, :tournament, :opponent, :started_at, :finished_at, :batting_fielding, :result, :my_score, :opponent_score)
+    end
+
+    def set_game
+      @game = Game.find(params[:id])
     end
 end

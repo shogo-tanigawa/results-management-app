@@ -1,0 +1,41 @@
+<% provide(:title, 'Game show') %>
+<h1>試合結果詳細</h1>
+
+<div class="col-md-8 col-md-offset-2">
+  <table class="table table-borderd, teble-condensed game-table">
+    <tbody>
+      <tr>
+        <th>日付</th>
+        <td><%= @game.game_day %></td>
+      </tr>
+      <tr>
+        <th>大会名</th>
+        <td><%= @game.tournament %></td></td>
+      </tr>
+      <tr>
+        <th>場所</th>
+        <td><%= @game.stadium %></td>
+      </tr>
+      <tr>
+        <th>対戦相手</th>
+        <td><%= @game.opponent %></td>
+      </tr>
+      <tr>
+        <th>時間</th>
+        <td><%= @game.started_at.strftime('%H:%M') %>～<%= @game.finished_at.strftime('%H:%M') %></td>
+      </tr>
+      <tr>
+        <th>先攻・後攻</th>
+        <td><%= @game.batting_fielding %></td>
+      </tr>
+      <tr>
+        <th>点数</th>
+        <td><%= @game.my_score %> - <%= @game.opponent_score %></td>
+      </tr>
+      <tr>
+        <th>結果</th>
+        <td><%= @game.result %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
