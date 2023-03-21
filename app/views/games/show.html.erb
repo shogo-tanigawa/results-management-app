@@ -39,3 +39,9 @@
     </tbody>
   </table>
 </div>
+<div class="col-md-7 col-md-offset-7">
+  <%= link_to "編集・修正", edit_game_path, class: "btn btn-primary edit-btn" %>
+  <%= link_to "削除", games_path, method: :delete,
+      data: { confirm: "削除してよろしいですか？" },
+      class: "btn btn-danger delete-btn" %>
+</div>
