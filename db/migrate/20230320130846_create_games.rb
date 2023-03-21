@@ -9,7 +9,8 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.datetime :finished_at
       t.string :batting_fielding
       t.string :result
-      t.integer :score
+      t.integer :my_score
+      t.integer :opponent_score
 
       t.timestamps
     end

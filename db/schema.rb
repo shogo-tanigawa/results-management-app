@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 2023_03_20_130846) do
     t.datetime "finished_at"
     t.string "batting_fielding"
     t.string "result"
-    t.integer "score"
+    t.integer "my_score"
+    t.integer "opponent_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
