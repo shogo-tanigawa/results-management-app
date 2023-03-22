@@ -1,0 +1,34 @@
+<%= form_with(model: @game, local: true) do |f| %>
+                
+  <%= f.label :game_day, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.date_select :game_day, class: "form-control" %><br>
+
+  <%= f.label :stadium, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :stadium, class: "form-control" %>
+
+  <%= f.label :tournament, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :tournament, class: "form-control" %>
+
+  <%= f.label :opponent, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :opponent, class: "form-control" %>
+
+  <%= f.label :started_at, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.time_select :started_at, class: "form-control" %><br>
+
+  <%= f.label :finished_at, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.time_select :finished_at, class: "form-control" %><br>
+
+  <%= f.label :batting_fielding, class: "label-#{yield(:class_text)}" %>
+  <%= f.select :batting_fielding, {'先攻': '先攻', '後攻': '後攻'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
+
+  <%= f.label :my_score, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :my_score, class: "form-control" %>
+
+  <%= f.label :opponent_score, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :opponent_score, class: "form-control" %>
+
+  <%= f.label :result, class: "label-#{yield(:class_text)}" %>
+  <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+<% end %>
