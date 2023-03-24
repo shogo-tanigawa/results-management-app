@@ -30,5 +30,8 @@
   <%= f.label :result, class: "label-#{yield(:class_text)}" %>
   <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
 
+  <%= f.label :scorebook, class: "label-#{yield(:class_text)}" %>
+  <%= f.file_field :scorebook, class: "form-control" %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>
