@@ -42,6 +42,11 @@
         <th>結果</th>
         <td><%= @game.result %></td>
       </tr>
+      <tr>
+        <% if @game.scorebook? %>
+          <%= link_to 'スコアブック', game_display_pdf_path(@game), class: 'btn btn-primary' %>
+        <% end %>
+      </tr>
     </tbody>
   </table>
 </div>

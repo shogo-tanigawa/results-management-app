@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update]
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
   
   def index
     @games = Game.all
@@ -17,7 +17,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     if @game.save
       flash[:success] = '試合結果を登録しました。'
-      redirect_to games_url
+      redirect_to @game
     else
       render :new
     end
@@ -36,11 +36,17 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = Game.find(params[:id])
     @game.destroy
     flash[:success] = "#{@game.game_day}の#{@game.opponent}戦のデータを削除しました。"
     redirect_to games_url
   end
+
+  def display_pdf
+    @game = Game.find(params[:id])
+    file_path = @game.scorebook.file.path
+    send_file(file_path, type: 'application/pdf', disposition: 'inline')
+  end
+  
 
   private
 
