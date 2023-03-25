@@ -33,5 +33,10 @@
   <%= f.label :scorebook, class: "label-#{yield(:class_text)}" %>
   <%= f.file_field :scorebook, class: "form-control" %>
 
+  <!-- 隠しフィールド -->
+  <%= f.hidden_field :delete_scorebook %>
+  <%= f.check_box :delete_scorebook %>
+  <%= f.label :delete_scorebook, 'スコアブックを削除する' %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>

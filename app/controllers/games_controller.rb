@@ -27,6 +27,10 @@ class GamesController < ApplicationController
   end
 
   def update
+    if params[:game][:scorebook].blank?
+      @game.scorebook.purge # 既存のファイルを削除する
+      @game.scorebook = nil # アタッチメントをnilにする
+    end
     if @game.update_attributes(game_params)
       flash[:success] = "試合結果を更新しました。"
       redirect_to @game
