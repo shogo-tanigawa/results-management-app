@@ -27,12 +27,17 @@ class GamesController < ApplicationController
   end
 
   def update
-    if params[:game][:delete_file] == "1"
-      if @game.scorebook.present?
+    if @game.scorebook.present?
+      if params[:game][:delete_file] == "1"
         @game.remove_scorebook!
         @game.scorebook = nil
-        @game.save
       end
+      if params[:game][:scorebook].present?
+        @game.remove_scorebook!
+        @game.scorebook = nil
+        @game.scorebook = params[:game][:scorebook]
+      end
+      @game.save
     end
     if @game.update_attributes(game_params)
       flash[:success] = "試合結果を更新しました。"
