@@ -27,9 +27,12 @@ class GamesController < ApplicationController
   end
 
   def update
-    if params[:game][:scorebook].blank?
-      @game.scorebook.purge # 既存のファイルを削除する
-      @game.scorebook = nil # アタッチメントをnilにする
+    if params[:game][:delete_file] == "1"
+      if @game.scorebook.present?
+        @game.remove_scorebook!
+        @game.scorebook = nil
+        @game.save
+      end
     end
     if @game.update_attributes(game_params)
       flash[:success] = "試合結果を更新しました。"
@@ -40,6 +43,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    @game.remove_scorebook!
     @game.destroy
     flash[:success] = "#{@game.game_day}の#{@game.opponent}戦のデータを削除しました。"
     redirect_to games_url

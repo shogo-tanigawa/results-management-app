@@ -44,4 +44,10 @@ class ScorebookUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  # ファイルの削除
+  def remove!
+    super
+    model.update_column(:scorebook, nil)
+  end
 end

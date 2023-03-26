@@ -30,13 +30,16 @@
   <%= f.label :result, class: "label-#{yield(:class_text)}" %>
   <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
 
-  <%= f.label :scorebook, class: "label-#{yield(:class_text)}" %>
-  <%= f.file_field :scorebook, class: "form-control" %>
-
-  <!-- 隠しフィールド -->
-  <%= f.hidden_field :delete_scorebook %>
-  <%= f.check_box :delete_scorebook %>
-  <%= f.label :delete_scorebook, 'スコアブックを削除する' %>
+  <%= f.hidden_field :delete_file, value: "0" %>
+  <div class="form-group">
+    <%= f.label :scorebook, class: "label-#{yield(:class_text)}" %>
+    <% if @game.scorebook? %>
+      <%= f.label :delete_file, class: 'form-label' do %>
+        <%= f.check_box :delete_file %> ファイルを削除する
+      <% end %>
+    <% end %>
+    <%= f.file_field :scorebook, class: "form-control" %>
+  </div>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>
