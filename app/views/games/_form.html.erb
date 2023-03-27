@@ -30,6 +30,9 @@
   <%= f.label :result, class: "label-#{yield(:class_text)}" %>
   <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
 
+  <%= f.label :comment, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_area :comment, class: "form-control" %>
+
   <%= f.hidden_field :delete_file, value: "0" %>
   <div class="form-group">
     <%= f.label :scorebook, class: "label-#{yield(:class_text)}" %>
