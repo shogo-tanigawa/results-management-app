@@ -43,6 +43,10 @@
         <td><%= @game.result %></td>
       </tr>
       <tr>
+        <th>コメント<br>(良かった点・反省点など)</th>
+        <td><%= simple_format(@game.comment) %></td>
+      </tr>
+      <tr>
         <% if @game.scorebook? %>
           <%= link_to 'スコアブック', game_display_pdf_path(@game), class: 'btn btn-success' %>
         <% end %>

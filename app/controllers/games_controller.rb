@@ -65,7 +65,7 @@ class GamesController < ApplicationController
 
     def game_params
       params.require(:game).permit(:game_day, :stadium, :tournament, :opponent, :started_at, :finished_at, 
-                                   :batting_fielding, :result, :my_score, :opponent_score, :scorebook, :comment)
+                                   :batting_fielding, :result, :my_score, :opponent_score, :comment, :scorebook)
     end
 
     def set_game
