@@ -12,12 +12,11 @@
 
 /* ユーザー登録ページ */
 .label-new {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .btn-new {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .login-page {
@@ -33,4 +32,17 @@
   border-radius: 5px;
   float: right;
   margin-top: 10px;
+}
+
+/* ログインページ */
+.label-login {
+  margin-top: 20px;
+}
+
+.btn-login {
+  margin-top: 10px;
+}
+
+.new-page {
+  float: right;
 }
