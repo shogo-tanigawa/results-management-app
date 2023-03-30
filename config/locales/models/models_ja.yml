@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      game: 試合
+    attributes:
+        game:
+          id: ID
+          game_day: 日付
+          stadium: 場所
+          tournament: 大会名
+          opponent: 対戦相手
+          started_at: 開始時間
+          finished_at: 終了時間
+          batting_fielding: 先攻･後攻
+          result: 勝・負
+          my_score: 自チーム得点
+          opponent_score: 相手チーム得点
+          scorebook: スコアブック
+          comment: コメント
+          created_at: 作成日
+          updated_at: 更新日

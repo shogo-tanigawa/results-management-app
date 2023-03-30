@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.7.6'
 
 gem 'rails', '~> 6.0.6', '>= 6.0.6.1'
+gem 'rails-i18n'
 gem 'bcrypt', '~> 3.1.18'
 gem 'faker'
 gem 'carrierwave'
