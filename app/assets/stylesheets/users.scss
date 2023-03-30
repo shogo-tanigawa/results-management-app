@@ -1,9 +1,20 @@
 /* ユーザー一覧ページ */
 
 #table-users {
+  th {
+    color: #fff;
+    font-size: large;
+  }
   td {
+    color: deeppink;
+    font-size: large;
+    font-weight: bold;
     vertical-align: middle;
   }  
+}
+
+.admin-user-index {
+  color: deeppink;
 }
 
 .label-user-division {

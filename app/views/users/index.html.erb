@@ -13,7 +13,7 @@
       <tr>
         <td>
           <% if current_user.admin? %>
-            <%= link_to user.name, user_path(user.id) %>
+            <%= link_to user.name, user_path(user.id), class: "admin-user-index" %>
           <% else %>
             <%= user.name %>
           <% end %>
