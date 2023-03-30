@@ -48,15 +48,15 @@
       </tr>
       <tr>
         <% if @game.scorebook? %>
-          <%= link_to 'スコアブック', game_display_pdf_path(@game), class: 'btn btn-success' %>
+          <%= link_to 'スコアブック', game_display_pdf_path(@game), class: 'btn btn-lg btn-success score-btn' %>
         <% end %>
       </tr>
     </tbody>
   </table>
 </div>
-<div class="col-md-7 col-md-offset-7">
-  <%= link_to "編集・修正", edit_game_path, class: "btn btn-primary edit-btn" %>
+<div class="col-md-6 col-md-offset-3">
+  <%= link_to "編集・修正", edit_game_path, class: "btn btn-lg btn-primary" %>
   <%= link_to "削除", @game, method: :delete,
       data: { confirm: "削除してよろしいですか？" },
-      class: "btn btn-danger delete-btn" %>
+      class: "btn btn-lg btn-danger delete-btn" %>
 </div>

@@ -12,8 +12,19 @@
   }
 }
 
+/* 試合結果詳細ページ */
 .game-table {
   tr th {
+    font-size: medium;
     text-align: center;
   }
+  tr td {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.score-btn {
+  float: right;
+  margin-bottom: 10px;
 }
