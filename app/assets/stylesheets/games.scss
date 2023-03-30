@@ -1,10 +1,15 @@
-.table-game tr th {
+/* 試合結果一覧ページ */
+.table-game tr {
+  th {
+  font-size: large;
   text-align: center;
-}
-
-.table-game {
-  margin-top: 10px;
-  text-align: center;
+  }
+  td {
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 .game-table {
