@@ -20,7 +20,8 @@
 }
 
 .login-page {
-  float: right;
+  float: left;
+  margin-top: 20px;
 }
 
 /* LINEログインボタン */
@@ -31,7 +32,6 @@
   padding: 10px;
   border-radius: 5px;
   float: right;
-  margin-top: 10px;
 }
 
 /* ログインページ */
@@ -44,7 +44,8 @@
 }
 
 .new-page {
-  float: right;
+  float: left;
+  margin-top: 20px;
 }
 
 /* ユーザー編集ページ */
@@ -62,6 +63,5 @@
 
 .back-page {
   float: left;
-  font-size: medium;
   margin-top: 10px;
 }
