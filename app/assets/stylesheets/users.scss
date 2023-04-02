@@ -6,7 +6,7 @@
     font-size: large;
   }
   td {
-    color: deeppink;
+    color: #222;
     font-size: large;
     font-weight: bold;
     vertical-align: middle;
@@ -14,7 +14,7 @@
 }
 
 .admin-user-index {
-  color: deeppink;
+  color: #222;
 }
 
 .label-user-division {
@@ -75,4 +75,15 @@
 .back-page {
   float: left;
   margin-top: 10px;
+}
+
+/* ユーザー詳細ページ */
+.user-table {
+  tr th {
+    text-align: center;
+  }
+  tr td {
+    font-size: large;
+    font-weight: bold;
+  }
 }
