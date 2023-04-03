@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   include UsersHelper
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :destroy]
-  before_action :admin_or_correct_user, only: [:destroy]
+  before_action :admin_or_correct_user, only: [:show, :destroy]
 
   def index
     @users = User.all
