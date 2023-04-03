@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   # GET /resource/sign_up
   def new
@@ -25,9 +26,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    if current_user.admin? # 管理者ユーザーの場合
+      resource = User.find(params[:id])
+      resource.destroy
+      redirect_to root_path, notice: 'ユーザーを削除しました。'
+    else # 一般ユーザーの場合
+      super
+    end
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -39,6 +46,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name]) # nameを許可する
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
