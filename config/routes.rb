@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks'
   }
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show, :destroy]
   resources :games do
     member do
       get :display_pdf
