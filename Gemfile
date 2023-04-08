@@ -22,6 +22,7 @@ gem 'devise'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
