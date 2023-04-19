@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   
   def index
-    @games = Game.all
+    @games = Game.all.order("game_day DESC")
     game = Game.find_by(id: params[:id])
   end
 

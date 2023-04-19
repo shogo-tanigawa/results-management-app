@@ -1,4 +1,5 @@
 <%= form_with(model: @game, local: true, multipart: true) do |f| %>
+  <%= render 'shared/error_messages', object: @game %>
                 
   <%= f.label :game_day, class: "label-#{yield(:class_text)}" %><br>
   <%= f.date_select :game_day, class: "form-control" %><br>
@@ -30,7 +31,7 @@
   <%= f.label :result, class: "label-#{yield(:class_text)}" %>
   <%= f.select :result, {'勝': '勝', '負': '負', '引き分け': '引き分け'}, {include_blank: '選択してください'}, { class: "form-control", required: true } %>
 
-  <%= f.label :comment, class: "label-#{yield(:class_text)}" %>
+  <%= f.label :comment, class: "label-#{yield(:class_text)}" %>(良かった点・反省点)
   <%= f.text_area :comment, class: "form-control" %>
 
   <%= f.hidden_field :delete_file, value: "0" %>
