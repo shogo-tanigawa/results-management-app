@@ -1,4 +1,9 @@
 /* 試合結果一覧ページ */
+
+.table-game {
+  margin-bottom: 50px;
+}
+
 .table-game tr {
   th {
   font-size: large;
@@ -29,6 +34,10 @@
   margin-bottom: 10px;
 }
 
+.delete-btn {
+  margin-bottom: 50px;
+}
+
 /*試合結果登録ページ*/
 .label-game--new {
   font-size: large;
@@ -38,6 +47,7 @@
 
 .btn-game--new {
   font-size: large;
+  margin-bottom: 50px;
 }
 
 /* 試合結果編集ページ */
@@ -49,4 +59,5 @@
 
 .btn-game--edit {
   font-size: large;
+  margin-bottom: 50px;
 }
